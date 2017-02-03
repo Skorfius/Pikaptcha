@@ -1,1 +1,0 @@
-from pikaptcha.accountcreator import *
