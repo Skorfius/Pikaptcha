@@ -27,7 +27,7 @@ def accept_tos_helper(username, password, location, proxy, hashkey):
         print "Using HashKey to Accept TOS'.format"
         api.activate_hash_server(key)
         if proxy != None:
-        api.set_proxy({"https":proxy})
+            api.set_proxy({"https":proxy})
 
     location = location.replace(" ", "")
     location = location.split(",")
