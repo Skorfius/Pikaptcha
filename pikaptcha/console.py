@@ -179,7 +179,7 @@ def entry():
                     
                     # Accept Terms Service
                     if(args.accepttos): 
-                        accept_tos(account_info["username"], account_info["password"], args.location, args.proxy) 
+                        accept_tos(account_info["username"], account_info["password"], args.location, args.proxy, args.hashkey) 
                     else: 
                         print "Skipping TOS acceptance"
         
