@@ -25,18 +25,18 @@ def accept_tos_helper(username, password, location, proxy, hashkey):
 
     device_info = generate_device_info()
     api = PGoApi(device_info=device_info)
-    if hashkey != None:
-        key = (hashkey)
-        print "Using HashKey to Accept TOS'.format"
-        api.activate_hash_server(key)
-        if proxy != None:
-            api.set_proxy({"https":proxy})
+    if proxy != None:
+        api.set_proxy({"https":proxy})
 
     location = location.replace(" ", "")
     location = location.split(",")
     place0 = float(location[0])
     place1 = float(location[1])
     api.set_position(place0, place1, 0.0)
+    if hashkey != None:
+        key = (hashkey)
+        print "Using HashKey {} to Accept TOS for Account {}".format(key, username)
+        api.activate_hash_server(key)
     api.set_authentication(provider = 'ptc', username = username, password = password)
     response = api.app_simulation_login()
     if response == None:
