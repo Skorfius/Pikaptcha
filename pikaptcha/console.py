@@ -174,15 +174,15 @@ def entry():
                     print('  Password:  {}'.format(account_info["password"]))
                     print('  Email   :  {}'.format(account_info["email"]))
                     
-                    # Accept Terms Service
-                    accept_tos(account_info["username"], account_info["password"], args.location, args.proxy, args.hashkey)
-        
                     # Verify email
                     if (args.googlepass is not None):
                         if (args.googlemail is not None):
                             email_verify(args.googlemail, args.googlepass)
                         else:
                             email_verify(args.plusmail, args.googlepass)
+
+                    # Accept Terms Service
+                    accept_tos(account_info["username"], account_info["password"], args.location, args.proxy, args.hash_key)
 
                     # Append usernames 
                     with open(args.textfile, "a") as ulist:
