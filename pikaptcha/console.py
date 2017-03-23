@@ -175,7 +175,7 @@ def entry():
                     print('  Email   :  {}'.format(account_info["email"]))
                     
                     # Accept Terms Service
-                    accept_tos(account_info["username"], account_info["password"], args.location, args.proxy, args.hash_key)
+                    accept_tos(account_info["username"], account_info["password"], args.location, args.proxy, args.hashkey)
         
                     # Verify email
                     if (args.googlepass is not None):
