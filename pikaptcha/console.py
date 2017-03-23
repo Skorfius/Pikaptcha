@@ -3,7 +3,7 @@ import sys
 
 import pikaptcha
 from pikaptcha.ptcexceptions import *
-from pikaptcha.tos import *
+#from pikaptcha.tos import *
 from pikaptcha.gmailv import *
 from pikaptcha.url import *
 from tos import accept_tos
