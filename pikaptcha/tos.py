@@ -25,8 +25,8 @@ def accept_tos_helper(username, password, location, proxy, hashkey):
 
     device_info = generate_device_info()
     api = PGoApi(device_info=device_info)
-    if proxy != None:
-        api.set_proxy({"https":proxy})
+    if proxy is not None:
+        api.set_proxy({"https": proxy})
 
     location = location.replace(" ", "")
     location = location.split(",")
