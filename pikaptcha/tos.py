@@ -33,9 +33,8 @@ def accept_tos_helper(username, password, location, proxy, hashkey):
     place0 = float(location[0])
     place1 = float(location[1])
     api.set_position(place0, place1, 0.0)
-    if hashkey != None:
-        key = (hashkey)
-        print "Using HashKey {} to Accept TOS for Account {}".format(key, username)
+    if hashkey:
+        key = hashkey
         api.activate_hash_server(key)
     loggedin = False
     while loggedin is False:
