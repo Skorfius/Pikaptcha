@@ -104,10 +104,6 @@ def parse_arguments(args):
         '-hk','--hashkey', type=str, default=None,
         help='Enter a Hash Key to use with Hashing Service for Accepting TOS'
     )
-    parser.add_argument( 
-        '-tos','--accepttos', type=bool, default=True, 
-        help='Accept terms of service for created accounts' 
-    )
 
     return parser.parse_args(args)
 
@@ -179,10 +175,7 @@ def entry():
                     print('  Email   :  {}'.format(account_info["email"]))
                     
                     # Accept Terms Service
-                    if(args.accepttos): 
-                        accept_tos(account_info["username"], account_info["password"], args.location, args.proxy, args.hashkey) 
-                    else: 
-                        print "Skipping TOS acceptance"
+                    accept_tos(account_info["username"], account_info["password"], args.location, args.proxy, args.hash_key)
         
                     # Verify email
                     if (args.googlepass is not None):
