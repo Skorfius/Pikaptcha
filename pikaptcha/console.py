@@ -6,6 +6,7 @@ from pikaptcha.ptcexceptions import *
 from pikaptcha.tos import *
 from pikaptcha.gmailv import *
 from pikaptcha.url import *
+from tos import accept_tos
 
 from pgoapi.exceptions import AuthException, ServerSideRequestThrottlingException, NotLoggedInException
 import pprint
